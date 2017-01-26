@@ -1,0 +1,25 @@
+series: xenial
+applications:
+  "apache-zookeeper":
+    charm: "cs:~tengu-bot/apache-zookeeper-0"
+    num_units: 1
+    to:
+      - "0"
+  "nimbus":
+    charm: "cs:~tengu-bot/storm-2"
+    num_units: 1
+    expose: true
+    to:
+      - "1"
+  "worker":
+    charm: "cs:~tengu-bot/storm-2"
+    num_units: 1
+    to:
+      - "2"
+relations:
+  - - "worker:zookeeper"
+    - "apache-zookeeper:zookeeper"
+  - - "nimbus:master"
+    - "worker:worker"
+  - - "nimbus:zookeeper"
+    - "apache-zookeeper:zookeeper"
