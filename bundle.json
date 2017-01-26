@@ -1,5 +1,16 @@
 {
-	"series": "xenial",
+	"series": "trusty",
+  "machines": {
+	  "0": {
+	    "series": "trusty"
+		},
+	  "1": {
+	    "series": "trusty"
+		},
+		"2": {
+	    "series": "trusty"
+		}
+	},
 	"applications": {
 		"apache-zookeeper": {
 			"charm": "cs:~tengu-bot/apache-zookeeper-0",
