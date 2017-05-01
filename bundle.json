@@ -5,9 +5,9 @@
     "1": { "series": "trusty" },
     "2": { "series": "trusty" }
   },
-  "applications": {
+  "services": {
     "apache-zookeeper": {
-      "charm": "cs:~tengu-bot/apache-zookeeper-0",
+      "charm": "cs:zookeeper-19",
       "num_units": 1,
       "to": ["0"]
     },
